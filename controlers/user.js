@@ -1,10 +1,20 @@
-const InfoSchema = require('../db/models/user');
+const UserInfo = require('../db/models/user');
 
 module.exports = {
-    async main(req, res){
-        console.log(111);
-        const user = await InfoSchema.find();
-        console.log(user);
+    async get(req, res){
+        const user = await UserInfo.find();
         res.status(200).send(user);
+    },
+
+    async add(req, res){
+        res.status(200).send("user");
+    },
+
+    async update(req, res){
+        res.status(200).send("user");
+    },
+
+    async delete(req, res){
+        res.status(200).send("user");
     }
 }
