@@ -6,15 +6,26 @@ module.exports = {
         res.status(200).send(user);
     },
 
-    async add(req, res){
-        res.status(200).send("user");
-    },
+     async post(req, res){
+         UserInfo.create({
+             username: "glab_16",
+             name: "glab",
+             lastname: "strizhkov",
+             email: "glabstrizhkov@gmail.com",
+             info: "other text"
+         })
+         res.status(200).send("post");
+     },
 
-    async update(req, res){
-        res.status(200).send("user");
+    async patch(req, res){
+        UserInfo.updateOne({info: "other text"}, {
+            $push : {text: "new Text"}
+        })
+        res.status(200).send("patch");
     },
 
     async delete(req, res){
-        res.status(200).send("user");
+        UserInfo.deleteOne({info: "other text"})
+        res.status(200).send("delete");
     }
 }
