@@ -2,7 +2,9 @@ const UserInfo = require('../db/models/user');
 
 module.exports = {
     async get(req, res){
-        const user = await UserInfo.find();
+        const user = await UserInfo.find((err) => {
+            console.log(err);
+        });
         res.status(200).send(user);
     },
 
@@ -13,19 +15,23 @@ module.exports = {
              lastname: "strizhkov",
              email: "glabstrizhkov@gmail.com",
              info: "other text"
+         }, (err) => {
+             console.log(err);
          })
          res.status(200).send("post");
      },
 
     async patch(req, res){
-        UserInfo.updateOne({info: "other text"}, {
-            $push : {text: "new Text"}
-        })
+        UserInfo.updateMany({info: "other text"}, {info: "new text"}, (err) => {
+            console.log(err);
+        });
         res.status(200).send("patch");
     },
 
     async delete(req, res){
-        UserInfo.deleteOne({info: "other text"})
+        UserInfo.remove({info: "other text"}, (err) => {
+            console.log(err);
+        });
         res.status(200).send("delete");
     }
 }
