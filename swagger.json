@@ -1,0 +1,197 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "b",
+    "description": "",
+    "contact": {},
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "description" : "Local dev",
+      "url": "http://localhost:3000/api",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/user/get": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "User listing",
+        "description": "",
+        "operationId": "User listing",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:3000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/user/add": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "User Add",
+        "description": "",
+        "operationId": "User Add",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "example": {
+                "userName": "Ivan",
+                "last_name": "Vasilovich",
+                "email": "test@gmail.com"
+              }
+            }
+          },
+          "required": true,
+          "x-send-file-in-body": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:3000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/user/update": {
+      "patch": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "User update",
+        "description": "",
+        "operationId": "User update",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "example": {
+                "id": "5e982bc9225aca14cde4e78f",
+                "first_name": "Ivan",
+                "last_name": "Vasilovich",
+                "email": "test@gmail.com"
+              }
+            }
+          },
+          "required": true,
+          "x-send-file-in-body": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:3000/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/user/remove": {
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "User remove",
+        "description": "",
+        "operationId": "User remove",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "example": {
+                "id": "5e982bc9225aca14cde4e78f"
+              }
+            }
+          },
+          "required": true,
+          "x-send-file-in-body": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:3000/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}
