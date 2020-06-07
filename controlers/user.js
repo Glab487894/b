@@ -10,18 +10,21 @@ module.exports = {
     },
 
      async post(req, res){
-        const userName = req.body.userName || "defauld";
-        console.log(userName);
+        const userName = req.body.username;
+        const name = req.body.name;
+        const lastname = req.body.lastname;
+        const  email = req.body.email;
+        const info = req.body.info;
 
-         // UserInfo.create({
-         //     username: userName,
-         //     name: "glab",
-         //     lastname: "strizhkov",
-         //     email: "glabstrizhkov@gmail.com",
-         //     info: "other text"
-         // }, (err) => {
-         //     console.log(err);
-         // });
+          UserInfo.create({
+             username: userName,
+             name: name,
+             lastname: lastname,
+             email: email,
+             info: info
+         }, (err) => {
+             console.log(err);
+         });
 
          res.status(200).send(userName);
      },

@@ -70,9 +70,11 @@
             "application/json": {
               "schema": {},
               "example": {
-                "userName": "Ivan",
-                "last_name": "Vasilovich",
-                "email": "test@gmail.com"
+                "username": "Glab_16",
+                "name": "glab",
+                "lastname": "strizhkov",
+                "email": "glabstrizhkov@gmail.com",
+                "info": "other text"
               }
             }
           },
