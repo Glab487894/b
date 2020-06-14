@@ -97,7 +97,7 @@
         "deprecated": false,
         "servers": [
           {
-            "url": "http://localhost:3000/api",
+            "url": "http://localhost:3000/api/",
             "variables": {}
           }
         ]
@@ -117,10 +117,8 @@
             "application/json": {
               "schema": {},
               "example": {
-                "id": "5e982bc9225aca14cde4e78f",
-                "first_name": "Ivan",
-                "last_name": "Vasilovich",
-                "email": "test@gmail.com"
+                "info": "other text",
+                "newInfo": "new text"
               }
             }
           },
@@ -143,7 +141,7 @@
         "deprecated": false,
         "servers": [
           {
-            "url": "http://localhost:3000/api/v1",
+            "url": "http://localhost:3000/api",
             "variables": {}
           }
         ]
@@ -186,7 +184,7 @@
         "deprecated": false,
         "servers": [
           {
-            "url": "http://localhost:3000/api/v1",
+            "url": "http://localhost:3000/api",
             "variables": {}
           }
         ]
