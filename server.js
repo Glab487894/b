@@ -1,8 +1,10 @@
 const express = require('express');
+require("dotenv").config();
 const bodyParser = require('body-parser');
 const connectDB = require("./db/db");
 
-const PORT = 3000;
+const PORT = process.env.NODE_ENV === 'production' ? process.env.PORT : process.env.TEST_PORT;
+
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

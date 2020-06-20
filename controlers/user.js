@@ -12,7 +12,7 @@ module.exports = {
                 data: user
             });
         }catch (error) {
-            res.status(400).send(`GET error and ${error}`)
+            res.status(400).send(`GET error and ${error}`);
         }
     },
 
@@ -22,6 +22,7 @@ module.exports = {
             const name = req.body.name;
             const lastname = req.body.lastname;
             const email = req.body.email;
+            const password = req.body.password;
             const info = req.body.info;
 
             const create = UserInfo.create({
@@ -29,6 +30,7 @@ module.exports = {
                 name: name,
                 lastname: lastname,
                 email: email,
+                password: password,
                 info: info
             }, (err) => {
                 console.log(err);
