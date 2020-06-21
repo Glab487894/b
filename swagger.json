@@ -190,6 +190,50 @@
           }
         ]
       }
+    },
+    "/authorization": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "authorization",
+        "description": "",
+        "operationId": "authorization",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "example": {
+                "email": "glabstrizhkov1@gmail.com",
+                "password": "qweasdzxc123456789"
+              }
+            }
+          },
+          "required": true,
+          "x-send-file-in-body": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:3000/api/",
+            "variables": {}
+          }
+        ]
+      }
     }
   },
   "components": {
