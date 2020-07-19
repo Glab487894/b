@@ -3,7 +3,8 @@ const router = express.Router();
 
 const  authorizationController = require('../controlers/authorization');
 
-router.post('/', authorizationController.authorization);
+router.post('/sing-up', authorizationController.singUp);
+router.post('/sing-in', authorizationController.singIn);
 
 
 module.exports = router;

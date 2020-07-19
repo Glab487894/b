@@ -32,6 +32,16 @@
               "type": "string",
               "example": "application/json"
             }
+          },
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2Y2U0Njk3LWE0MjctNDRjMi1hYmYzLWU4MTlhZTRkZTc3YyIsImFkbWluIjpmYWxzZSwiaWF0IjoxNTgwOTA4MTA3LCJleHAiOjE1ODA5MTE3MDd9.rYkBV7UgKtLnMFuk2VVvXUYYSTxHm-GOeUusy4n-_DE"
+            }
           }
         ],
         "responses": {
@@ -51,54 +61,6 @@
         "servers": [
           {
             "url": "http://localhost:3000/api",
-            "variables": {}
-          }
-        ]
-      }
-    },
-    "/user/add": {
-      "post": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "User Add",
-        "description": "",
-        "operationId": "User Add",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {},
-              "example": {
-                "username": "Glab_16",
-                "name": "glab",
-                "lastname": "strizhkov",
-                "email": "glabstrizhkov@gmail.com",
-                "password": "qweasdzxc123456789",
-                "info": "other text"
-              }
-            }
-          },
-          "required": true,
-          "x-send-file-in-body": false
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "headers": {},
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false,
-        "servers": [
-          {
-            "url": "http://localhost:3000/api/",
             "variables": {}
           }
         ]
@@ -191,10 +153,54 @@
         ]
       }
     },
-    "/authorization": {
+    "/authorization/sing-up": {
       "post": {
         "tags": [
-          "Users"
+          "Authorization"
+        ],
+        "summary": "authorization",
+        "description": "",
+        "operationId": "authorization",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "example": {
+                "email": "glabstrizhkov1@gmail.com",
+                "password": "qweasdzxc123456789"
+              }
+            }
+          },
+          "required": true,
+          "x-send-file-in-body": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:3000/api/",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/authorization/sing-in": {
+      "post": {
+        "tags": [
+          "Authorization"
         ],
         "summary": "authorization",
         "description": "",

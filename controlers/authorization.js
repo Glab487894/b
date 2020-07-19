@@ -1,7 +1,34 @@
 const UserInfo = require('../db/models/user');
 
 module.exports = {
-    async authorization(req, res){
+    async singUp(req, res){
+        try{
+            const email = req.body.email;
+            const password = req.body.password;
+
+            const user = await UserInfo.findOne({email});
+            if(user) {
+                return res.status(200).send({
+                    message: `The user ${email} is exist`
+                })
+            } else {
+                const create = UserInfo.create({email, password}, (err) => {
+                    console.log(err);
+                });
+
+                res.status(200).send({
+                    message: "object has been created",
+                    data: create
+                });
+            }
+
+
+        } catch (error) {
+            res.status(400).send(`authorization error and ${error}`);
+        }
+    },
+
+    async singIn(req, res){
         try{
             const email = req.body.email;
             const password = req.body.password;
